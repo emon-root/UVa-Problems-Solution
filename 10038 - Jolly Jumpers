@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    freopen("input.txt", "r", stdin);
+    int T;
+    bool flag = false;
+    cin>>T;
+    while(T--){
+        int x;
+        vector<int>item;
+        cin>>x;
+        int t = abs(x);
+        item.push_back(t);
+        sort(item.begin(), item.end());
+        for(int i=0; i<item.size()-1; i++){
+            if(i==0){
+                continue;
+            }
+            else if(item[i-1]+1 != item[i]){
+                flag = true;
+            }
+        }
+    }
+    if(flag==true){
+       cout<<"Not jolly"<<endl;
+    }
+    else{
+       cout<<"Jolly"<<endl;
+    }
+    return 0;
+}
